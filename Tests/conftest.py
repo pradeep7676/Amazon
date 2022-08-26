@@ -3,6 +3,7 @@ from webbrowser import Chrome
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+driver = None
 
 from Config.confiq import TestData
 
@@ -31,7 +32,7 @@ def setup(request):
     driver.maximize_window()
     request.cls.driver = driver
     yield
-    driver.quit()
+
 
 @pytest.fixture
 def params(request):
@@ -42,4 +43,6 @@ def params(request):
     if params['username'] is None and params['password'] is None:
         pytest.skip()
     return params
+
+
 

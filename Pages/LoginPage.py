@@ -15,15 +15,19 @@ class LoginPage(BasePage):
         self.driver = driver
 
     def enter_email(self):
+        self.wait_presence(LoginPage.EMAIL)
         return self.driver.find_element(*LoginPage.EMAIL)
 
     def click_email_continue(self):
+        self.wait_clickable(LoginPage.EMAIL_CONTINUE)
         return self.driver.find_element(*LoginPage.EMAIL_CONTINUE)
 
     def enter_password(self):
+        self.wait_presence(LoginPage.PASSWORD)
         return self.driver.find_element(*LoginPage.PASSWORD)
 
     def click_password_continue(self):
+        self.wait_clickable(LoginPage.PASSWORD_CONTINUE)
         return self.driver.find_element(*LoginPage.PASSWORD_CONTINUE)
 
     def error(self):
