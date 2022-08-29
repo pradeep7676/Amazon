@@ -61,7 +61,7 @@ class Test_Shopping(BasePage):
             self.waiting_until_item_enabled(bp_obj.click_buy_button())
             bp_obj.click_buy_button().click()
         else:
-            log.info("out of stock so going for fifth product")
+            log.info("out of stock")
             '''self.Parent_window_handles()
             hp_obj = HomePage(self.driver)
             hp_obj.click_fifthProduct()
